@@ -1,0 +1,13 @@
+# conda env create -f environment.yml
+name: mnist-rdr
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - tensorflow==2.21.0
+      - keras==3.15.1
+      - numpy==2.4.6
+      - opencv-python==5.0.0.93
+      - pygrabber==0.2

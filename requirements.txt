@@ -1,0 +1,10 @@
+# 直接相依套件（版本為開發時實測可用的組合）
+# keras 3.x 與 tensorflow 2.21 綁定，h5py 由 tensorflow 一併安裝（讀取 .h5 模型需要）
+tensorflow==2.21.0
+keras==3.15.1
+numpy==2.4.6
+opencv-python==5.0.0.93
+
+# 僅 Windows 需要：列舉 DirectShow 裝置名稱，用來自動挑出 OBS 虛擬攝影機
+# 沒有它程式仍可執行，但會退化成硬試索引 0~3
+pygrabber==0.2 ; sys_platform == "win32"
