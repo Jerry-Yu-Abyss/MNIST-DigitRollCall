@@ -15,6 +15,7 @@ MNIST數字辨視點名系統/
 ├── RDR單數字.py          單數字辨識，除錯／對照用，不在主流程上
 ├── RDR介面.py            辨識端 GUI，呼叫 RDR多數字.main()，寫出 recognized_code.txt
 ├── 點名系統.py           點名端 GUI（模擬 TronClass），出題並輪詢 recognized_code.txt
+├── fonts/               簽到密碼字體(5 種 TTF + 各自的 OFL 授權檔)
 ├── start_all.py         啟動器，檢查檔案齊全後開啟上面兩支 GUI
 ├── try-CNN.bat          一鍵啟動，內容必須維持純 ASCII（原因見下）
 └── .vscode/settings.json 指定 conda 直譯器
@@ -97,6 +98,9 @@ camera_utils.py ──────► RDR多數字.py ──► RDR介面.py ─
 - **`cap.read()` 成功不等於有畫面**。沒開串流的虛擬攝影機照樣回傳全黑影格，
   必須再檢查對比度（`RDR_MIN_STD`），否則會選到一支看不見東西的鏡頭卻毫無錯誤訊息。
 - **`pythonw.exe` 沒有主控台**，任何例外都是無聲關閉。排錯時改用 `python.exe` 直接跑。
+- **tkinter 找不到字體時不會報錯**，只會默默改用預設字體。原本的字體清單有 7 種是
+  macOS 專屬字體，在 Windows 上等於隨機字體功能失效卻毫無徵兆。新增字體後務必用
+  `tkfont.families()` 確認家族名(是「Playfair Display」不是檔名「PlayfairDisplay」)。
 
 ### 環境前置
 - OBS 須先按「啟動虛擬攝影機」，否則 `open_camera()` 會丟出 `RuntimeError` 並列出偵測到的裝置。

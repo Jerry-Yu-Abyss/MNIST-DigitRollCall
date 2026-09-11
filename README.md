@@ -15,6 +15,7 @@ MNIST-DigitRollCall/
 ├── RDR單數字.py          單數字辨識，除錯／對照用
 ├── RDR介面.py            辨識端 GUI
 ├── 點名系統.py           點名端 GUI（模擬 TronClass），出題並等待簽到
+├── fonts/               簽到密碼用的五種字體（SIL OFL 授權，隨專案附帶）
 ├── start_all.py         啟動器，檢查檔案齊全後開啟兩支 GUI
 ├── try-CNN.bat          Windows 一鍵啟動
 ├── environment.yml      conda 環境定義
@@ -23,6 +24,21 @@ MNIST-DigitRollCall/
 ```
 
 兩支 GUI 是獨立行程，透過 `recognized_code.txt` 交握（點名端讀到即刪檔）。
+
+### 簽到密碼字體
+
+每次顯示簽到畫面會從五種字體隨機挑一種，讓辨識條件更接近真實情境：
+
+| 字體 | 風格 | 辨識實測（字高 45／60 px） |
+|---|---|---|
+| Playfair Display | 高對比襯線 | 7/8、8/8 |
+| Comfortaa | 圓潤幾何 | 8/8、8/8 |
+| Anton | 極粗壓縮 | 8/8、7/8 |
+| Lobster | 書法連筆 | 6/8、7/8 |
+| Oswald | 窄長無襯線 | 7/8、7/8 |
+
+字體以 `AddFontResourceEx` 的 `FR_PRIVATE` 模式**只註冊給該行程**，
+不寫入系統字體目錄也不動登錄檔，關掉程式即失效，無需管理員權限。
 
 ## 在新電腦上啟動（完整步驟）
 
