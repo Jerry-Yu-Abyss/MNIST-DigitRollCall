@@ -1,0 +1,8 @@
+# 預設統一用 LF，避免跨平台換行混亂
+* text=auto eol=lf
+
+# Windows 批次檔必須是 CRLF，否則 cmd.exe 可能解析失敗
+*.bat text eol=crlf
+
+# 模型是二進位，不要做換行轉換
+*.h5 binary

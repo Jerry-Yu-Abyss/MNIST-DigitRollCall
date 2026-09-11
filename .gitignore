@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 執行期產生的暫存檔：辨識端寫入、點名端讀取後即刪除
+recognized_code.txt
+
+# 作業系統
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 編輯器
+.idea/
+*.swp
+
+# 註：cnn_mnist_model.h5 是刻意版控的（2.76 MB），
+# 讓 clone 下來的人不必先跑 8 分鐘訓練就能直接執行。

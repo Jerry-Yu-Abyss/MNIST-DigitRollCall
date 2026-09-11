@@ -1,0 +1,7 @@
+{
+  "python.defaultInterpreterPath": "${env:USERPROFILE}/anaconda3/envs/mnist-rdr/python.exe",
+  "python.analysis.extraPaths": ["."],
+  "python.terminal.activateEnvironment": true,
+  "python-envs.defaultEnvManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "ms-python.python:conda"
+}
